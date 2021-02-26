@@ -13,8 +13,8 @@ datasets.download_dataset(dataset)
 model = resnet50_unet(n_classes=n_classes ,  input_height=256, input_width=256)
 
 model.train( 
-train_images =  "image-chips/",
-train_annotations = "label-chips/",
+train_images =  "dataset-medium/image-chips/",
+train_annotations = "dataset-medium/label-chips/",
 checkpoints_path = "resnet50_unet" , epochs=n_epochs
 )
 model.save('segmentation.h5')

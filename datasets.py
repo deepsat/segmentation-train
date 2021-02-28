@@ -33,6 +33,6 @@ def download_dataset(dataset):
     label_chips = f'{dataset}/label-chips'
     if not os.path.exists(image_chips) and not os.path.exists(label_chips):
         print("creating chips")
-        libs.images2chips.run(dataset)
+        images2chips.run(dataset)
     else:
         print(f'chip folders "{image_chips}" and "{label_chips}" already exist, remove them to recreate chips.')

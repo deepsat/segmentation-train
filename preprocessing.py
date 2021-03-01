@@ -13,13 +13,16 @@ def visualize(image):
 #Read file
 file='zdj1.png'
 img = PIL.Image.open(file)
+
 #Enhance colors
 converter = PIL.ImageEnhance.Color(img)
 img = converter.enhance(3)
-img = np.array(img2)
+img = np.array(img)
+
 #CLAHE
 aug = CLAHE(p=0.7)
-img=aug(image=img2)['image']
+img=aug(image=img)['image']
+
 #NLM
-img = cv2.fastNlMeansDenoisingColored(img2,None,10,10,7,21)
+img = cv2.fastNlMeansDenoisingColored(img,None,10,10,7,21)
 visualize(img)

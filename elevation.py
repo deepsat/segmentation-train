@@ -1,5 +1,5 @@
 from tensorflow.keras.optimizers import Adam
-epochs = 10
+epochs = 100
 
 tab=["fcn_8", "fcn_32", "fcn_8_vgg", "fcn_32_vgg", "fcn_8_resnet50", "fcn_32_resnet50", "fcn_8_mobilenet", "fcn_32_mobilenet", "pspnet", "vgg_pspnet", "resnet50_pspnet","unet_mini",
     "unet", "vgg_unet", "resnet50_unet", "mobilenet_unet","segnet","vgg_segnet","resnet50_segnet","mobilenet_segnet"]
@@ -343,6 +343,6 @@ dataset = "dataset-sample/"
 model.train(
     train_images =  "dataset-medium/image-chips/",
     train_annotations = "dataset-medium/label-chips/",
-    checkpoints_path = "resnet50_unet", epochs=10
+    checkpoints_path = "resnet50_unet", epochs=epochs
 )
 model.save("elevation.h5")
